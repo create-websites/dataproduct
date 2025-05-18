@@ -1,0 +1,544 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+	<head id="ctl00_head1"><title>
+	Title: "AI Under Siege: Unmasking Four Key Attack Vectors"
+</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700" rel="stylesheet" />
+		<noscript><link rel="stylesheet" href="https://storage.googleapis.com/kreatewebsites/site1/css/5grid/core.css" /><link rel="stylesheet" href="https://storage.googleapis.com/kreatewebsites/site1/css/5grid/core-desktop.css" /><link rel="stylesheet" href="https://storage.googleapis.com/kreatewebsites/site1/css/5grid/core-1200px.css" /><link rel="stylesheet" href="https://storage.googleapis.com/kreatewebsites/site1/css/5grid/core-noscript.css" /><link rel="stylesheet" href="https://storage.googleapis.com/kreatewebsites/site1/css/style.css" /><link rel="stylesheet" href="https://storage.googleapis.com/kreatewebsites/site1/css/style-desktop.css" /></noscript>
+		<script src="https://storage.googleapis.com/kreatewebsites/site1/css/5grid/jquery.js"></script>
+		<script src="https://storage.googleapis.com/kreatewebsites/site1/css/5grid/init.js?use=mobile,desktop,1000px&amp;mobileUI=1&amp;mobileUI.theme=none&amp;mobileUI.titleBarHeight=60&amp;mobileUI.openerWidth=52"></script>
+		<!--[if IE 9]><link rel="stylesheet" href="https://storage.googleapis.com/kreatewebsites/site1/css/style-ie9.css" /><![endif]-->
+	<meta name="description" content="The article discusses various types of attacks on generative AI models, including prompt injection, data poison attacks, data sources attacks, and direct attacks on the model itself, all of which aim to manipulate the model&#39;s outputs or degrade its performance. These attacks can lead to the dissemination of false information, biased outputs, and compromised model integrity, highlighting the need for robust security measures in AI systems." /><meta name="keywords" content="1. Prompt Injection,
+2. Data Poison Attack,
+3. Data Sources Attack,
+4. Attack on Model,
+5. Malicious Users,
+6. Generative AI,
+7. Harmful Outputs,
+8. Biased Outputs,
+9. Adversarial Attacks,
+10. Model Extraction" /></head>
+	<body>
+
+	<!-- ********************************************************* -->  
+        <!-- show double header               --#include virtual="header.inc"- -->
+        
+
+<div id="header-wrapper">
+				<header class="5grid-layout" id="site-header">
+					<div class="row">
+						<div class="12u">
+							<div id="logo">
+								<h1> <a id="ctl00_header2_myTitle" class="mobileUI-site-name" href="https://www.dataproduct.net/">Dataknobs</a></h1>
+
+							</div>
+ 
+        
+          <nav class="mobileUI-site-nav" id="site-nav">  
+<ul>
+    
+
+    
+
+
+    <li>
+			<a id="ctl00_header2_RepLinks_ctl01_Hyperlink2" href="https://www.dataproduct.net/">Home</a>									
+		
+    </li>
+
+
+
+
+
+             
+ 
+ 	</ul>
+							</nav>
+						</div>
+					</div>
+				</header>
+			</div>	
+		
+       
+
+		<div id="main-wrapper" class="subpage">
+				<div class="5grid-layout">
+					<div class="row">
+						<div class="9u">
+					
+							<!-- Content -->
+
+								<article class="first">
+									 
+
+    
+
+															
+																<h3><span id="ctl00_ContentPlaceHolder1_title">Title: "AI Under Siege: Unmasking Four Key Attack Vectors"</span></h3>
+														
+																
+																		 <span> <span id="ctl00_ContentPlaceHolder1_metadesc">The article discusses various types of attacks on generative AI models, including prompt injection, data poison attacks, data sources attacks, and direct attacks on the model itself, all of which aim to manipulate the model's outputs or degrade its performance. These attacks can lead to the dissemination of false information, biased outputs, and compromised model integrity, highlighting the need for robust security measures in AI systems.</span></span>				
+                        <br />     
+													
+					   
+
+                                         
+											
+										
+										
+                                           
+
+							
+									
+									<span id="ctl00_ContentPlaceHolder1_labeltext"></span>	
+
+                                    		                       														
+                            <br />
+                             <table id="ctl00_ContentPlaceHolder1_RepComments" cellspacing="0" border="0">
+	<tr>
+		<td>
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+					
+                   
+
+												 
+               							
+		
+
+      <span id="ctl00_ContentPlaceHolder1_RepComments_ctl01_labeltext"><font color="Black" size="4"><table>
+    <thead>
+        <tr>
+            <th>Aspect</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Prompt Injection</td>
+            <td>
+                <div>
+                    Prompt injection is a type of attack where malicious users manipulate the input prompts given to a generative AI model. By crafting specific inputs, attackers can cause the model to generate harmful or unintended outputs. This can lead to the dissemination of false information, offensive content, or even the exposure of sensitive data.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Data Poison Attack</td>
+            <td>
+                <div>
+                    Data poison attacks involve the introduction of malicious data into the training dataset of a generative AI model. This corrupted data can skew the model's learning process, leading to biased or incorrect outputs. The goal of such attacks is to degrade the performance of the AI system or to make it behave in a way that benefits the attacker.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Data Sources Attack</td>
+            <td>
+                <div>
+                    Data sources attacks target the integrity and reliability of the data sources used by generative AI models. By compromising these sources, attackers can inject false or misleading information into the model's training data. This can result in the model generating outputs based on incorrect or manipulated data, thereby undermining its trustworthiness and accuracy.
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Attack on Model</td>
+            <td>
+                <div>
+                    Attacks on the model itself involve exploiting vulnerabilities in the AI model's architecture or algorithms. These attacks can take various forms, such as adversarial attacks where inputs are crafted to deceive the model, or model extraction attacks where attackers attempt to replicate the model by querying it extensively. The objective is to either degrade the model's performance or to steal its intellectual property.
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table></font></span>
+    <br />
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+
+</td>
+	</tr>
+</table>    
+                            <br />
+                            
+                             <div class="fb-activity" data-site="https://www.dataproduct.net/" data-action="likes, recommends" data-colorscheme="light" data-header="true"></div>
+	
+								
+                                <div class="fb-comments" data-href="https://www.dataproduct.net/" data-numposts="5" data-colorscheme="light" data-order-by="reverse_time"></div>
+			
+<!--
+                            <div class="fb-post" data-href="https://www.facebook.com/DiwaliCelebrations" data-width="500"></div>		
+                              <div class="fb-recommendations" data-site="https://www.dataproduct.net/" data-action="likes, recommends" data-colorscheme="light" data-header="true"></div>
+		
+   				-->			
+
+
+
+								</article>							
+
+						</div>
+
+					<div class="3u">
+						
+							<!-- Sidebar -->
+							
+								<section>
+
+									<h3>Topics</h3>
+									<ul class="link-list">
+																				
+
+    
+
+
+
+												
+						
+			<a id="ctl00_articlessub_RepLinks_ctl01_title" class="nav-item nav-link active" href="https://www.dataproduct.net/"><em><b>Home</b></em></a>
+            
+           
+       
+
+
+
+
+
+
+
+             
+ 
+ 
+ 
+	
+									</ul>
+								</section>
+
+								<section class="last">
+									<h3>Related Links</h3>
+									<p>
+																
+									</p>
+									<ul class="link-list">
+										
+
+    
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl01_title" href="https://www.dataproduct.net/">Home</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl02_title" href="https://www.dataproduct.net/ai-agents/">Ai agents</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl03_title" href="https://www.dataproduct.net/data-products/">Data products</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl04_title" href="https://www.dataproduct.net/generative-model/">Generative model</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl05_title" href="https://www.dataproduct.net/generativeai/">Generativeai</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl06_title" href="https://www.dataproduct.net/graph-database/">Graph database</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl07_title" href="https://www.dataproduct.net/large-language-model/">Large language model</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl08_title" href="https://www.dataproduct.net/speech-analytics/">Speech analytics</a>
+            </li>	
+
+
+
+
+
+
+
+             
+ 
+ 
+ 
+
+										
+
+    
+
+
+
+												
+								
+		<a id="ctl00_Articlesub1_RepLinks_ctl01_title" class="btn btn-link" href="https://www.dataproduct.net/genai/security-framework/Slide1.html">Slide1</a>
+        
+    <br />
+
+
+
+
+
+												
+								
+		<a id="ctl00_Articlesub1_RepLinks_ctl02_title" class="btn btn-link" href="https://www.dataproduct.net/genai/security-framework/Slide2.html">Slide2</a>
+        
+    <br />
+
+
+
+
+
+												
+								
+		<a id="ctl00_Articlesub1_RepLinks_ctl03_title" class="btn btn-link" href="https://www.dataproduct.net/genai/security-framework/Slide3.html">Slide3</a>
+        
+    <br />
+
+
+
+
+
+
+
+             
+ 
+ 
+ 
+ 
+									</ul>
+								</section>
+						
+						</div>
+					</div>
+				</div>
+		</div>
+			
+        
+
+<div id="footer-wrapper">
+				<footer class="5grid-layout" id="site-footer">
+					<div class="row">
+						<div class="3u">
+							<section class="first">
+								<h2><a id="ctl00_footer_footerhead" title="Dataknobs" href="https://www.dataproduct.net/">Dataknobs</a></h2>
+								<ul class="link-list">
+										
+									
+									
+                                    <table id="ctl00_footer_RepLinks" cellspacing="0" border="0">
+	<tr>
+		<td>
+
+    
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl01_title" href="https://www.dataproduct.net/">Home</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl02_title" href="https://www.dataproduct.net/ai-agents/">Ai agents</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl03_title" href="https://www.dataproduct.net/data-products/">Data products</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl04_title" href="https://www.dataproduct.net/generative-model/">Generative model</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl05_title" href="https://www.dataproduct.net/generativeai/">Generativeai</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl06_title" href="https://www.dataproduct.net/graph-database/">Graph database</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl07_title" href="https://www.dataproduct.net/large-language-model/">Large language model</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl08_title" href="https://www.dataproduct.net/speech-analytics/">Speech analytics</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+
+</td>
+	</tr>
+</table>
+                                    
+
+                   </ul>
+							</section>
+						</div>
+
+                        <div class="3u">
+							<section >
+								<h2>Set 2</h2>
+								<ul class="link-list">
+										
+									
+									
+                                    
+                                    
+
+                   </ul>
+							</section>
+						</div>
+                        <div class="3u">
+							<section >
+								<h2>Set 3</h2>
+								<ul class="link-list">
+										
+									
+									
+                                    
+                                    
+
+                   </ul>
+							</section>
+						</div>
+
+                        <div class="3u">
+							<section class="last" >
+								<h2>Set 4</h2>
+								<ul class="link-list">
+										
+									
+									
+                                    
+                                    
+
+                   </ul>
+							</section>
+						</div>
+                        	</div>
+					<div class="row">
+						<div class="12u">
+							<div class="divider"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="12u">
+							<div id="copyright">
+								&copy; Copyright.  Design: <a id="ctl00_footer_cright">Dataknobs</a> | <a id="ctl00_footer_sitemap"></a>  | <a id="ctl00_footer_privacypolicy" href="Dataknobsprivacypolicy.html">Privacy Policy</a> 
+							</div>
+						</div>
+					</div>
+				</footer>
+		<!-- Footer -->
+
+
+
+	</body>
+</html>
