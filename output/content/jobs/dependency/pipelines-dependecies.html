@@ -1,0 +1,600 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+	<head id="ctl00_head1"><title>
+	How to  Align Job Execution Dependency in Building New Data
+</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700" rel="stylesheet" />
+		<noscript><link rel="stylesheet" href="https://storage.googleapis.com/kreatewebsites/site1/css/5grid/core.css" /><link rel="stylesheet" href="https://storage.googleapis.com/kreatewebsites/site1/css/5grid/core-desktop.css" /><link rel="stylesheet" href="https://storage.googleapis.com/kreatewebsites/site1/css/5grid/core-1200px.css" /><link rel="stylesheet" href="https://storage.googleapis.com/kreatewebsites/site1/css/5grid/core-noscript.css" /><link rel="stylesheet" href="https://storage.googleapis.com/kreatewebsites/site1/css/style.css" /><link rel="stylesheet" href="https://storage.googleapis.com/kreatewebsites/site1/css/style-desktop.css" /></noscript>
+		<script src="https://storage.googleapis.com/kreatewebsites/site1/css/5grid/jquery.js"></script>
+		<script src="https://storage.googleapis.com/kreatewebsites/site1/css/5grid/init.js?use=mobile,desktop,1000px&amp;mobileUI=1&amp;mobileUI.theme=none&amp;mobileUI.titleBarHeight=60&amp;mobileUI.openerWidth=52"></script>
+		<!--[if IE 9]><link rel="stylesheet" href="https://storage.googleapis.com/kreatewebsites/site1/css/style-ie9.css" /><![endif]-->
+	<meta name="description" content="To check whether other jobs are running and to align their execution or dependencies, you can use a combination of tools, practices, and frameworks." /><meta name="keywords" content="How to  align job execution, data job dependency" /></head>
+	<body>
+
+	<!-- ********************************************************* -->  
+        <!-- show double header               --#include virtual="header.inc"- -->
+        
+
+<div id="header-wrapper">
+				<header class="5grid-layout" id="site-header">
+					<div class="row">
+						<div class="12u">
+							<div id="logo">
+								<h1> <a id="ctl00_header2_myTitle" class="mobileUI-site-name" href="https://www.dataproduct.net/">Data Products</a></h1>
+
+							</div>
+ 
+        
+          <nav class="mobileUI-site-nav" id="site-nav">  
+<ul>
+    
+
+    
+
+
+    <li>
+			<a id="ctl00_header2_RepLinks_ctl01_Hyperlink2" href="https://www.dataproduct.net/">Home</a>									
+		
+    </li>
+
+
+
+
+
+             
+ 
+ 	</ul>
+							</nav>
+						</div>
+					</div>
+				</header>
+			</div>	
+		
+       
+
+		<div id="main-wrapper" class="subpage">
+				<div class="5grid-layout">
+					<div class="row">
+						<div class="9u">
+					
+							<!-- Content -->
+
+								<article class="first">
+									 
+
+    
+
+															
+																<h3><span id="ctl00_ContentPlaceHolder1_title">How to  Align Job Execution Dependency in Building New Data</span></h3>
+														
+																
+																		 <span> <span id="ctl00_ContentPlaceHolder1_metadesc">To check whether other jobs are running and to align their execution or dependencies, you can use a combination of tools, practices, and frameworks.</span></span>				
+                        <br />     
+													
+					   
+
+                                         
+											
+										
+										
+                                           
+
+							
+									
+									<span id="ctl00_ContentPlaceHolder1_labeltext"></span>	
+
+                                    		                       														
+                            <br />
+                             <table id="ctl00_ContentPlaceHolder1_RepComments" cellspacing="0" border="0">
+	<tr>
+		<td>
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+					
+                   
+
+												 
+               							
+		
+
+      <span id="ctl00_ContentPlaceHolder1_RepComments_ctl01_labeltext"><font color="Black" size="4">To check whether other jobs are running and to align their execution or dependencies, you can use a combination of tools, practices, and frameworks. Here's a detailed guide:
+
+---
+
+### **1. Job Dependency Management Frameworks**
+Use job schedulers or workflow orchestrators that natively support dependency tracking and management:
+- **Examples**:
+  - **Apache Airflow**: Define job dependencies in Directed Acyclic Graphs (DAGs). You can check the status of upstream jobs before running dependent ones.
+  - **Prefect** or **Luigi**: Lightweight tools to manage job dependencies programmatically.
+  - **AWS Step Functions**: For cloud-native workflows with dependencies.
+  - **Control-M** or **Autosys**: Enterprise-grade schedulers for job dependencies.
+
+---
+
+### **2. Check Job Status**
+**Programmatic Approach:**
+- Query the scheduler or database where job metadata (e.g., start time, end time, status) is stored.
+- Example with Airflow:
+  ```python
+  from airflow.models import DagRun
+  from airflow.utils.state import State
+
+  dag_runs = DagRun.find(dag_id='my_dag')
+  for run in dag_runs:
+      print(f"Run: {run.execution_date}, State: {run.state}")
+  ```
+  
+**Command-line Approach:**
+- Many schedulers provide CLI tools. For example:
+  ```bash
+  airflow dags state my_dag <execution_date>
+  ```
+
+**Database/Logs:**
+- Check centralized logs or metadata storage that tracks job runs and their statuses.
+
+---
+
+### **3. Establish Dependencies**
+**Using Workflow Orchestrators:**
+- **Explicit Dependencies**: Define jobs and their dependencies.
+  - Example with Airflow:
+    ```python
+    from airflow import DAG
+    from airflow.operators.dummy import DummyOperator
+
+    with DAG(dag_id='example_dag', start_date=datetime(2024, 1, 1)) as dag:
+        task1 = DummyOperator(task_id='task1')
+        task2 = DummyOperator(task_id='task2')
+        task1 >> task2  # Task2 depends on Task1
+    ```
+
+**File/Flag-Based Dependency:**
+- Jobs create a "done" file/flag upon completion, and dependent jobs check for its existence.
+  ```bash
+  if [ -f /path/to/job1_done.flag ]; then
+      echo "Job1 completed, running Job2..."
+  fi
+  ```
+
+**Database-Based Dependency:**
+- Maintain a database table to track job execution.
+  ```sql
+  CREATE TABLE job_status (
+      job_name VARCHAR(50),
+      status VARCHAR(10),
+      last_run TIMESTAMP
+  );
+  ```
+
+---
+
+### **4. Alignment Strategies**
+- **Polling**: Poll for the completion status of upstream jobs using APIs, CLI tools, or custom scripts.
+- **Event-Driven Execution**: Use tools like Kafka, RabbitMQ, or AWS EventBridge to trigger downstream jobs upon upstream job completion.
+- **Global Queue**: Maintain a queue where jobs are pushed upon completion and workers check this queue to decide what to execute next.
+
+---
+
+### **5. Monitoring and Alerts**
+- Use monitoring tools to track job statuses:
+  - **Prometheus + Grafana**: For job metrics and visualization.
+  - **Alerting Systems**: Set up notifications for job failures or delays.
+
+---
+
+### **6. Code Example: Dependency Check in Python**
+```python
+import time
+from airflow.models import DagRun
+from airflow.utils.state import State
+
+def check_job_status(dag_id, execution_date):
+    dag_run = DagRun.find(dag_id=dag_id, execution_date=execution_date)
+    if dag_run and dag_run.state == State.SUCCESS:
+        return True
+    return False
+
+# Example Usage
+if check_job_status('upstream_dag', '2024-11-25T00:00:00'):
+    print("Upstream job completed. Proceeding with the next job...")
+else:
+    print("Waiting for upstream job to finish...")
+    time.sleep(60)  # Check again after 60 seconds
+```
+
+By implementing these practices and tools, you can effectively manage and align job executions while ensuring dependencies are respected.</font></span>
+    <br />
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+
+</td>
+	</tr>
+</table>    
+                            <br />
+                            
+                             <div class="fb-activity" data-site="https://www.dataproduct.net/" data-action="likes, recommends" data-colorscheme="light" data-header="true"></div>
+	
+								
+                                <div class="fb-comments" data-href="https://www.dataproduct.net/" data-numposts="5" data-colorscheme="light" data-order-by="reverse_time"></div>
+			
+<!--
+                            <div class="fb-post" data-href="https://www.facebook.com/DiwaliCelebrations" data-width="500"></div>		
+                              <div class="fb-recommendations" data-site="https://www.dataproduct.net/" data-action="likes, recommends" data-colorscheme="light" data-header="true"></div>
+		
+   				-->			
+
+
+
+								</article>							
+
+						</div>
+
+					<div class="3u">
+						
+							<!-- Sidebar -->
+							
+								<section>
+
+									<h3>Topics</h3>
+									<ul class="link-list">
+																				
+
+    
+
+
+
+												
+						
+			<a id="ctl00_articlessub_RepLinks_ctl01_title" class="nav-item nav-link active" href="https://www.dataproduct.net/"><em><b>Home</b></em></a>
+            
+           
+       
+
+
+
+
+
+
+
+             
+ 
+ 
+ 
+	
+									</ul>
+								</section>
+
+								<section class="last">
+									<h3>Related Links</h3>
+									<p>
+																
+									</p>
+									<ul class="link-list">
+										
+
+    
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl01_title" href="https://www.dataproduct.net/">Home</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl02_title" href="https://www.dataproduct.net/ai-agents/">Ai agents</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl03_title" href="https://www.dataproduct.net/data-interpretations/">Data interpretations</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl04_title" href="https://www.dataproduct.net/data-products/">Data products</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl05_title" href="https://www.dataproduct.net/generative-model/">Generative model</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl06_title" href="https://www.dataproduct.net/generativeai/">Generativeai</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl07_title" href="https://www.dataproduct.net/graph-database/">Graph database</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl08_title" href="https://www.dataproduct.net/large-language-model/">Large language model</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl09_title" href="https://www.dataproduct.net/speech-analytics/">Speech analytics</a>
+            </li>	
+
+
+
+
+
+
+
+             
+ 
+ 
+ 
+
+										
+
+    
+
+
+
+												
+								
+		<a id="ctl00_Articlesub1_RepLinks_ctl01_title" class="btn btn-link" href="https://www.dataproduct.net/jobs/dependency/pipelines-dependecies.html">Pipelines-dependecies</a>
+        
+    <br />
+
+
+
+
+
+
+
+             
+ 
+ 
+ 
+ 
+									</ul>
+								</section>
+						
+						</div>
+					</div>
+				</div>
+		</div>
+			
+        
+
+<div id="footer-wrapper">
+				<footer class="5grid-layout" id="site-footer">
+					<div class="row">
+						<div class="3u">
+							<section class="first">
+								<h2><a id="ctl00_footer_footerhead" title="Data Products" href="https://www.dataproduct.net/">Data Products</a></h2>
+								<ul class="link-list">
+										
+									
+									
+                                    <table id="ctl00_footer_RepLinks" cellspacing="0" border="0">
+	<tr>
+		<td>
+
+    
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl01_title" href="https://www.dataproduct.net/">Home</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl02_title" href="https://www.dataproduct.net/ai-agents/">Ai agents</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl03_title" href="https://www.dataproduct.net/data-interpretations/">Data interpretations</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl04_title" href="https://www.dataproduct.net/data-products/">Data products</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl05_title" href="https://www.dataproduct.net/generative-model/">Generative model</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl06_title" href="https://www.dataproduct.net/generativeai/">Generativeai</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl07_title" href="https://www.dataproduct.net/graph-database/">Graph database</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl08_title" href="https://www.dataproduct.net/large-language-model/">Large language model</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl09_title" href="https://www.dataproduct.net/speech-analytics/">Speech analytics</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+
+</td>
+	</tr>
+</table>
+                                    
+
+                   </ul>
+							</section>
+						</div>
+
+                        <div class="3u">
+							<section >
+								<h2>Set 2</h2>
+								<ul class="link-list">
+										
+									
+									
+                                    
+                                    
+
+                   </ul>
+							</section>
+						</div>
+                        <div class="3u">
+							<section >
+								<h2>Set 3</h2>
+								<ul class="link-list">
+										
+									
+									
+                                    
+                                    
+
+                   </ul>
+							</section>
+						</div>
+
+                        <div class="3u">
+							<section class="last" >
+								<h2>Set 4</h2>
+								<ul class="link-list">
+										
+									
+									
+                                    
+                                    
+
+                   </ul>
+							</section>
+						</div>
+                        	</div>
+					<div class="row">
+						<div class="12u">
+							<div class="divider"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="12u">
+							<div id="copyright">
+								&copy; Copyright.  Design: <a id="ctl00_footer_cright">Data Products</a> | <a id="ctl00_footer_sitemap"></a>  | <a id="ctl00_footer_privacypolicy" href="Data%20Productsprivacypolicy.html">Privacy Policy</a> 
+							</div>
+						</div>
+					</div>
+				</footer>
+		<!-- Footer -->
+
+
+
+	</body>
+</html>
