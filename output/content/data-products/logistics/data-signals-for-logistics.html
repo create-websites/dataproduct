@@ -1,0 +1,688 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+	<head id="ctl00_head1"><title>
+	Data Product Example For Logistics and Supply Chain
+</title><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700" rel="stylesheet" />
+		<noscript><link rel="stylesheet" href="https://storage.googleapis.com/kreatewebsites/site1/css/5grid/core.css" /><link rel="stylesheet" href="https://storage.googleapis.com/kreatewebsites/site1/css/5grid/core-desktop.css" /><link rel="stylesheet" href="https://storage.googleapis.com/kreatewebsites/site1/css/5grid/core-1200px.css" /><link rel="stylesheet" href="https://storage.googleapis.com/kreatewebsites/site1/css/5grid/core-noscript.css" /><link rel="stylesheet" href="https://storage.googleapis.com/kreatewebsites/site1/css/style.css" /><link rel="stylesheet" href="https://storage.googleapis.com/kreatewebsites/site1/css/style-desktop.css" /></noscript>
+		<script src="https://storage.googleapis.com/kreatewebsites/site1/css/5grid/jquery.js"></script>
+		<script src="https://storage.googleapis.com/kreatewebsites/site1/css/5grid/init.js?use=mobile,desktop,1000px&amp;mobileUI=1&amp;mobileUI.theme=none&amp;mobileUI.titleBarHeight=60&amp;mobileUI.openerWidth=52"></script>
+		<!--[if IE 9]><link rel="stylesheet" href="https://storage.googleapis.com/kreatewebsites/site1/css/style-ie9.css" /><![endif]-->
+	<meta name="description" content="Discover how to use logistics data—such as vessel tracking, port congestion, and weather feeds—to optimize supply chain operations. Learn about public datasets, commercial sources, and how to build a predictive ETA model using real-time data." /><meta name="keywords" content="logistics data, supply chain analytics, predictive ETA, AIS data, port congestion, vessel tracking, transportation datasets, MarineTraffic API, NOAA weather API, port of Los Angeles, supply chain optimization, open logistics datasets, real-time shipment tracking, data for supply chain AI" /></head>
+	<body>
+
+	<!-- ********************************************************* -->  
+        <!-- show double header               --#include virtual="header.inc"- -->
+        
+
+<div id="header-wrapper">
+				<header class="5grid-layout" id="site-header">
+					<div class="row">
+						<div class="12u">
+							<div id="logo">
+								<h1> <a id="ctl00_header2_myTitle" class="mobileUI-site-name" href="https://www.dataproduct.net/">Data Products</a></h1>
+
+							</div>
+ 
+        
+          <nav class="mobileUI-site-nav" id="site-nav">  
+<ul>
+    
+
+    
+
+
+    <li>
+			<a id="ctl00_header2_RepLinks_ctl01_Hyperlink2" href="https://www.dataproduct.net/">Home</a>									
+		
+    </li>
+
+
+
+
+
+             
+ 
+ 	</ul>
+							</nav>
+						</div>
+					</div>
+				</header>
+			</div>	
+		
+       
+
+		<div id="main-wrapper" class="subpage">
+				<div class="5grid-layout">
+					<div class="row">
+						<div class="9u">
+					
+							<!-- Content -->
+
+								<article class="first">
+									 
+
+    
+
+															
+																<h3><span id="ctl00_ContentPlaceHolder1_title">Data Product Example For Logistics and Supply Chain</span></h3>
+														
+																
+																		 <span> <span id="ctl00_ContentPlaceHolder1_metadesc">Discover how to use logistics data—such as vessel tracking, port congestion, and weather feeds—to optimize supply chain operations. Learn about public datasets, commercial sources, and how to build a predictive ETA model using real-time data.</span></span>				
+                        <br />     
+													
+					   
+
+                                         
+											
+										
+										
+                                           
+
+							
+									
+									<span id="ctl00_ContentPlaceHolder1_labeltext"></span>	
+
+                                    		                       														
+                            <br />
+                             <table id="ctl00_ContentPlaceHolder1_RepComments" cellspacing="0" border="0">
+	<tr>
+		<td>
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+					
+                   
+
+												 
+               							
+		
+
+      <span id="ctl00_ContentPlaceHolder1_RepComments_ctl01_labeltext"><font color="Black" size="4"><p>Leveraging logistics data can unlock significant value across supply chain, transportation, and retail operations. Below are <strong>examples of use cases</strong>, <strong>types of data</strong>, and <strong>sources</strong> (including public datasets and data vendors):</p>
+<hr />
+<h3>✅ <strong>Use Cases for Logistics Data</strong></h3>
+<ol>
+<li>
+<p><strong>Route Optimization</strong></p>
+</li>
+<li>
+<p>Reduce delivery time and fuel costs.</p>
+</li>
+<li>
+<p>Input data: GPS, traffic, vehicle telemetry, weather.</p>
+</li>
+<li>
+<p><strong>Demand Forecasting</strong></p>
+</li>
+<li>
+<p>Anticipate inventory needs and plan warehouse capacity.</p>
+</li>
+<li>
+<p>Input data: Order history, shipment volumes, seasonality, economic indicators.</p>
+</li>
+<li>
+<p><strong>Shipment Tracking &amp; ETA Prediction</strong></p>
+</li>
+<li>
+<p>Real-time updates and delay alerts for customers.</p>
+</li>
+<li>
+<p>Input data: Carrier tracking data, port congestion, weather conditions.</p>
+</li>
+<li>
+<p><strong>Fleet Management</strong></p>
+</li>
+<li>
+<p>Monitor vehicle health, fuel usage, and compliance.</p>
+</li>
+<li>
+<p>Input data: Vehicle telematics, driver logs, maintenance records.</p>
+</li>
+<li>
+<p><strong>Carbon Emission Analysis</strong></p>
+</li>
+<li>
+<p>Measure and reduce environmental footprint.</p>
+</li>
+<li>
+<p>Input data: Route data, vehicle type, fuel usage, logistics mode (air, sea, truck, rail).</p>
+</li>
+<li>
+<p><strong>Risk &amp; Disruption Management</strong></p>
+</li>
+<li>
+<p>Predict port delays, strikes, or geopolitical issues.</p>
+</li>
+<li>
+<p>Input data: News feeds, port status, customs data, satellite imagery.</p>
+</li>
+<li>
+<p><strong>Market Intelligence</strong></p>
+</li>
+<li>
+<p>Analyze competitor shipment activity and supply chain trends.</p>
+</li>
+<li>Input data: Container tracking, import/export manifests.</li>
+</ol>
+<hr />
+<h3>📊 <strong>Types of Logistics Data</strong></h3>
+<p>| Data Type                                 | Description                               | Use Case Examples             |
+| ----------------------------------------- | ----------------------------------------- | ----------------------------- |
+| <strong>Carrier tracking data</strong>                 | Real-time data from FedEx, UPS, DHL, etc. | ETA, delay prediction         |
+| <strong>Port and terminal data</strong>                | Vessel schedules, congestion status       | Risk prediction, ETA          |
+| <strong>Freight rates &amp; contract data</strong>         | Pricing for sea, air, rail, and truck     | Cost optimization             |
+| <strong>AIS (Automatic Identification System)</strong> | Ship position data                        | Maritime analytics            |
+| <strong>Geo-spatial data</strong>                      | Maps, traffic, road infrastructure        | Route optimization            |
+| <strong>Import/export data</strong>                    | US Bill of Lading, customs data           | Competitor analysis, sourcing |
+| <strong>Telematics data</strong>                       | Vehicle diagnostics, GPS, fuel            | Fleet ops, carbon emissions   |
+| <strong>Warehouse sensor data</strong>                 | Inventory levels, temp/humidity           | Cold chain, inventory mgmt.   |</p>
+<hr />
+<h3>🌐 <strong>Where to Get the Data</strong></h3>
+<h4>🔓 <strong>Public/Open Datasets</strong></h4>
+<p>| Source                                                | Description                                   |
+| ----------------------------------------------------- | --------------------------------------------- |
+| <strong>Bureau of Transportation Statistics (BTS)</strong>         | U.S. freight flows, transport modes, fuel use |
+| <strong>US Census Bureau – USA Trade Online</strong>               | Import/export trade data                      |
+| <strong>MarineTraffic API (freemium)</strong>                      | AIS data of ships (location, speed, ports)    |
+| <strong>OpenStreetMap + OpenTraffic</strong>                       | Road networks and traffic data                |
+| <strong>National Renewable Energy Laboratory (NREL)</strong>       | Vehicle fleet and logistics emissions         |
+| <strong>Eurostat Transport Data</strong>                           | European Union logistics statistics           |
+| <strong>U.S. Customs Import/Export Data (PIERS or Census)</strong> | Shipment-level detail by company/commodity    |</p>
+<h4>💼 <strong>Commercial Data Providers</strong></h4>
+<p>| Vendor                                | Data Type                                 |
+| ------------------------------------- | ----------------------------------------- |
+| <strong>Project44, FourKites, Transporeon</strong> | Real-time supply chain visibility         |
+| <strong>Freightos, Xeneta</strong>                 | Freight rate intelligence                 |
+| <strong>Descartes Datamyne</strong>                | Trade data + logistics analytics          |
+| <strong>Orbcomm, Geotab, Samsara</strong>          | Fleet telematics &amp; IoT                    |
+| <strong>Spire, Windward</strong>                   | Maritime tracking, satellite AIS          |
+| <strong>ImportGenius, Panjiva</strong>             | Competitor import/export shipment history |</p>
+<hr />
+<h3>🧠 Example Integration Scenario</h3>
+<p><strong>Goal:</strong> Improve ETA prediction for imported goods arriving at West Coast ports.</p>
+<p><strong>Data Used:</strong></p>
+<ul>
+<li>AIS ship tracking (MarineTraffic, Spire)</li>
+<li>Port congestion data (BTS or port websites)</li>
+<li>Weather forecasts (NOAA or OpenWeatherMap)</li>
+<li>Historical customs clearance times (Datamyne or Panjiva)</li>
+</ul>
+<p><strong>Outcome:</strong>
+Improved estimated delivery windows for retailers and better supply chain planning.</p>
+<hr />
+<h2>Example Use Case</h2>
+<p>Great! Let’s walk through a <strong>step-by-step predictive ETA use case</strong> for goods arriving at a U.S. port using <strong>public and freemium logistics datasets</strong>.</p>
+<hr />
+<h2>🎯 <strong>Use Case:</strong> Predict ETA for Cargo at Port of Los Angeles</h2>
+<h3>🧩 <strong>Objective</strong></h3>
+<p>Help importers and supply chain teams predict when their shipments will be available for pickup at the Port of LA, considering vessel location, port congestion, and weather.</p>
+<hr />
+<h2>🧱 Step 1: Data Sources</h2>
+<p>| Data Type                    | Source                                                                             | Access   |
+| ---------------------------- | ---------------------------------------------------------------------------------- | -------- |
+| <strong>AIS (Vessel Position)</strong>    | <a href="https://www.marinetraffic.com/">MarineTraffic API</a> or <a href="https://spire.com/">Spire</a> | Freemium |
+| <strong>Port Congestion</strong>          | Port of LA <a href="https://kpi.portoflosangeles.org/">public dashboard</a>                   | Free     |
+| <strong>Historical Port Delays</strong>   | <a href="https://www.bts.gov/ports">BTS Port Performance</a>                                  | Free     |
+| <strong>Weather Forecasts</strong>        | <a href="https://www.weather.gov/documentation/services-web-api">NOAA API</a>                 | Free     |
+| <strong>Vessel Arrival Schedules</strong> | <a href="https://mxsocal.org/">Port of LA Marine Exchange</a>                                 | Free     |</p>
+<hr />
+<h2>🛠️ Step 2: Data Ingestion</h2>
+<p>Use a script to fetch:</p>
+<p>```python</p>
+<h1>Example: Get ship location from MarineTraffic (pseudo-code)</h1>
+<p>import requests</p>
+<p>ship_id = "IMO:1234567"
+marine_traffic_api_key = "YOUR_API_KEY"</p>
+<p>response = requests.get(
+    f"https://services.marinetraffic.com/api/exportvessel/v:2/{marine_traffic_api_key}/shipid:{ship_id}/protocol:json"
+)
+ship_data = response.json()
+```</p>
+<p>Other APIs (e.g., NOAA) return JSON/XML format for wind speed, fog, and storms that may affect docking.</p>
+<hr />
+<h2>🧠 Step 3: Feature Engineering</h2>
+<p>| Feature                                         | Source                             |
+| ----------------------------------------------- | ---------------------------------- |
+| Current vessel location &amp; speed                 | MarineTraffic                      |
+| Distance to port                                | Haversine formula                  |
+| Port congestion (ships at anchor)               | Port of LA KPI dashboard           |
+| Average historical dwell time                   | BTS historical data                |
+| Weather impact factor (delays due to fog/storm) | NOAA forecast                      |
+| Terminal-level delay factor                     | Marine Exchange schedule deviation |</p>
+<hr />
+<h2>🤖 Step 4: Predictive Model (Simple Version)</h2>
+<ul>
+<li><strong>Model Type:</strong> Regression (ETA in hours)</li>
+<li>
+<p><strong>Features:</strong></p>
+</li>
+<li>
+<p><code>distance_to_port</code></p>
+</li>
+<li><code>avg_speed</code></li>
+<li><code>ships_waiting_at_port</code></li>
+<li><code>weather_delay_risk</code></li>
+<li><code>terminal_delay_factor</code></li>
+</ul>
+<p>```python
+from sklearn.linear_model import LinearRegression</p>
+<p>X = df[["distance_to_port", "avg_speed", "ships_waiting", "weather_risk", "terminal_factor"]]
+y = df["actual_eta_hours"]</p>
+<p>model = LinearRegression().fit(X, y)
+predicted_eta = model.predict(new_X)
+```</p>
+<hr />
+<h2>📊 Step 5: Output Dashboard</h2>
+<p>Use <strong>Streamlit</strong> or <strong>Dash</strong> to display:</p>
+<ul>
+<li>Live vessel position map (via Leaflet or Plotly)</li>
+<li>Predicted ETA with confidence interval</li>
+<li>Port congestion status</li>
+<li>Weather risk alert</li>
+<li>Suggested pickup time for trucks</li>
+</ul>
+<hr />
+<h2>🔄 Optional: Alert System</h2>
+<p>Send alerts via email or Slack when:</p>
+<ul>
+<li>Predicted ETA deviates &gt; 12 hours</li>
+<li>Weather risk is high</li>
+<li>Port congestion exceeds a threshold</li>
+</ul>
+<hr />
+<h2>🚀 Expand to Multiple Ports</h2>
+<p>Once it works for one Port , it can be extended for multiple ports:</p>
+<hr /></font></span>
+    <br />
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+
+</td>
+	</tr>
+</table>    
+                            <br />
+                            
+                             <div class="fb-activity" data-site="https://www.dataproduct.net/" data-action="likes, recommends" data-colorscheme="light" data-header="true"></div>
+	
+								
+                                <div class="fb-comments" data-href="https://www.dataproduct.net/" data-numposts="5" data-colorscheme="light" data-order-by="reverse_time"></div>
+			
+<!--
+                            <div class="fb-post" data-href="https://www.facebook.com/DiwaliCelebrations" data-width="500"></div>		
+                              <div class="fb-recommendations" data-site="https://www.dataproduct.net/" data-action="likes, recommends" data-colorscheme="light" data-header="true"></div>
+		
+   				-->			
+
+
+
+								</article>							
+
+						</div>
+
+					<div class="3u">
+						
+							<!-- Sidebar -->
+							
+								<section>
+
+									<h3>Topics</h3>
+									<ul class="link-list">
+																				
+
+    
+
+
+
+												
+						
+			<a id="ctl00_articlessub_RepLinks_ctl01_title" class="nav-item nav-link active" href="https://www.dataproduct.net/"><em><b>Home</b></em></a>
+            
+           
+       
+
+
+
+
+
+
+
+             
+ 
+ 
+ 
+	
+									</ul>
+								</section>
+
+								<section class="last">
+									<h3>Related Links</h3>
+									<p>
+																
+									</p>
+									<ul class="link-list">
+										
+
+    
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl01_title" href="https://www.dataproduct.net/">Home</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl02_title" href="https://www.dataproduct.net/ai-agents/">Ai agents</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl03_title" href="https://www.dataproduct.net/data-interpretations/">Data interpretations</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl04_title" href="https://www.dataproduct.net/data-products/">Data products</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl05_title" href="https://www.dataproduct.net/generative-model/">Generative model</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl06_title" href="https://www.dataproduct.net/generativeai/">Generativeai</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl07_title" href="https://www.dataproduct.net/graph-database/">Graph database</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl08_title" href="https://www.dataproduct.net/large-language-model/">Large language model</a>
+            </li>	
+
+
+
+
+
+												
+		<li>								
+		<a id="ctl00_articleshome_RepLinks_ctl09_title" href="https://www.dataproduct.net/speech-analytics/">Speech analytics</a>
+            </li>	
+
+
+
+
+
+
+
+             
+ 
+ 
+ 
+
+										
+
+    
+
+
+
+												
+								
+		<a id="ctl00_Articlesub1_RepLinks_ctl01_title" class="btn btn-link" href="https://www.dataproduct.net/data-products/logistics/data-signals-for-logistics.html">Data-signals-for-logistics</a>
+        
+    <br />
+
+
+
+
+
+
+
+             
+ 
+ 
+ 
+ 
+									</ul>
+								</section>
+						
+						</div>
+					</div>
+				</div>
+		</div>
+			
+        
+
+<div id="footer-wrapper">
+				<footer class="5grid-layout" id="site-footer">
+					<div class="row">
+						<div class="3u">
+							<section class="first">
+								<h2><a id="ctl00_footer_footerhead" title="Data Products" href="https://www.dataproduct.net/">Data Products</a></h2>
+								<ul class="link-list">
+										
+									
+									
+                                    <table id="ctl00_footer_RepLinks" cellspacing="0" border="0">
+	<tr>
+		<td>
+
+    
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl01_title" href="https://www.dataproduct.net/">Home</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl02_title" href="https://www.dataproduct.net/ai-agents/">Ai agents</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl03_title" href="https://www.dataproduct.net/data-interpretations/">Data interpretations</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl04_title" href="https://www.dataproduct.net/data-products/">Data products</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl05_title" href="https://www.dataproduct.net/generative-model/">Generative model</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl06_title" href="https://www.dataproduct.net/generativeai/">Generativeai</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl07_title" href="https://www.dataproduct.net/graph-database/">Graph database</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl08_title" href="https://www.dataproduct.net/large-language-model/">Large language model</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+												
+		<li>								
+		<a id="ctl00_footer_RepLinks_ctl09_title" href="https://www.dataproduct.net/speech-analytics/">Speech analytics</a>
+            </li>	
+
+
+</td>
+	</tr><tr>
+		<td>
+
+
+
+</td>
+	</tr>
+</table>
+                                    
+
+                   </ul>
+							</section>
+						</div>
+
+                        <div class="3u">
+							<section >
+								<h2>Set 2</h2>
+								<ul class="link-list">
+										
+									
+									
+                                    
+                                    
+
+                   </ul>
+							</section>
+						</div>
+                        <div class="3u">
+							<section >
+								<h2>Set 3</h2>
+								<ul class="link-list">
+										
+									
+									
+                                    
+                                    
+
+                   </ul>
+							</section>
+						</div>
+
+                        <div class="3u">
+							<section class="last" >
+								<h2>Set 4</h2>
+								<ul class="link-list">
+										
+									
+									
+                                    
+                                    
+
+                   </ul>
+							</section>
+						</div>
+                        	</div>
+					<div class="row">
+						<div class="12u">
+							<div class="divider"></div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="12u">
+							<div id="copyright">
+								&copy; Copyright.  Design: <a id="ctl00_footer_cright">Data Products</a> | <a id="ctl00_footer_sitemap"></a>  | <a id="ctl00_footer_privacypolicy" href="Data%20Productsprivacypolicy.html">Privacy Policy</a> 
+							</div>
+						</div>
+					</div>
+				</footer>
+		<!-- Footer -->
+
+
+
+	</body>
+</html>
